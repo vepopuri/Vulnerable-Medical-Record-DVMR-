@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>DVMR — Patient Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>DVMR &middot; Real-Time Patient Dashboard</h1>
+    <span id="modeBadge">mode: ...</span>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Patient Profile Look-up</h2>
+      <div class="row">
+        <input id="searchInput" placeholder="Search by name or patient ID (e.g. Alice, 1001)" />
+        <button id="searchBtn">Search</button>
+      </div>
+      <div id="searchResults"></div>
+      <div class="hint">
+        Demo doctor tokens for the Live Vitals panel: <code>doctor-token-1</code> (Alice, Carla, Emma),
+        <code>doctor-token-2</code> (Bob, David).
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Live Vitals Monitor</h2>
+      <div class="row">
+        <input id="tokenInput" placeholder="Doctor token (ignored in vulnerable mode)" />
+      </div>
+      <div class="row">
+        <input id="patientIdInput" placeholder="Patient ID (e.g. 1001)" />
+        <button id="joinBtn">Watch Patient</button>
+      </div>
+      <div id="vitalsFeed"></div>
+
+      <h2 style="margin-top:16px">Doctor's Notes (real-time)</h2>
+      <div id="notesFeed"></div>
+      <div class="row" style="margin-top:8px">
+        <textarea id="noteInput" rows="2" placeholder="Type a note for the currently watched patient..."></textarea>
+      </div>
+      <button id="noteBtn">Submit Note</button>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

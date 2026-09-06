@@ -1,0 +1,7 @@
+node_modules/
+health_records.db
+health_records.db-journal
+health_records.db-wal
+health_records.db-shm
+npm-debug.log*
+.DS_Store

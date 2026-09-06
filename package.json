@@ -1,0 +1,16 @@
+{
+  "name": "dvmr-vulnerable-medical-dashboard",
+  "version": "1.0.0",
+  "description": "Vulnerable-by-design real-time EHR dashboard (DVMR) for security training and testing",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}
