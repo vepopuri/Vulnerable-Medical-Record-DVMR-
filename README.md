@@ -58,6 +58,13 @@ checks that the token's doctor is the patient's `assigned_doctor`
 before allowing the join. Demo tokens: `doctor-token-1` (assigned to
 Alice/Carla/Emma) and `doctor-token-2` (assigned to Bob/David).
 
+> **Not real credentials.** `doctor-token-1` / `doctor-token-2` are
+> hardcoded placeholder strings baked into `server.js` for this demo
+> only — they carry no secret value, are not rotated, and are not an
+> example of real auth-token handling. If a scanner flags them, that's
+> a false positive; do not treat them as leaked secrets, and do not
+> reuse this hardcoded-token pattern in production code.
+
 ### 3. Real-time Stored XSS — Doctor's Notes (CWE-79)
 The `doctor_note` socket event stores the note with raw string
 concatenation and rebroadcasts it unescaped to everyone watching that
